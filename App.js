@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView style = {{ flex: 1}}>
+      <PanGestureHandler onGestureEvent={() => console.log('Gesture detected!')}>
+        <View style ={styles.box}/>
+      </PanGestureHandler>
+    </GestureHandlerRootView>
   );
 }
 
